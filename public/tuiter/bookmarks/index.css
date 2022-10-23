@@ -104,7 +104,9 @@ body{
     border-bottom-color: rgb(110, 118, 125);
     border-bottom-width: 0px;
     position: inherit;
-    width: 100%;
+    width: 504px;
+    height: 264px;
+
 }
 
 .wd-content-padding {
