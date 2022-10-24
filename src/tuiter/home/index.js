@@ -4,10 +4,7 @@ import HomePostItemList from './home-post-list'
 
 const HomeComponent = () => {
     return (
-       <>
-           <HomePostItemList/>
-           <PostSummaryList/>
-       </>
+       <HomePostItemList />
     )
 }
 
