@@ -7,6 +7,9 @@ const HomePostItemList = () => {
     return (
         <div className="card">
             {
+
+                // call api
+
                 postsArray.map(post => <HomePostItem key={post.name}  post={post}/>)
             }
         </div>
