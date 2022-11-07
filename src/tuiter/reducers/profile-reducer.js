@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const profile = {
     "firstName": "Yuanyuan",
-    "lastName": " Wu",
+    "lastName": "Wu",
     "handle": "yuanyuan",
     "avatar": "avatar.png",
     "bannerPicture": "banner.jpeg",
@@ -30,6 +30,7 @@ const profileSlice = createSlice({
             const [year, month, day] = updatedProfile.dateOfBirth.split('-');
             const dateOfBirth = [month, day, year].join('/');
             return {...state, firstName, lastName, bio, location, website, dateOfBirth}
+            // return {...action.payload};
         }
     }
 });

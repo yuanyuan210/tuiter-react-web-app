@@ -6,7 +6,6 @@ import {updateProfile} from "../reducers/profile-reducer";
 
 const EditProfile = () => {
     const profile = useSelector(state => state.profile);
-    const dispatch = useDispatch();
     //const navigate = useNavigate();
 
     const [name, setName] = useState(profile.firstName + ' ' + profile.lastName);
@@ -15,10 +14,11 @@ const EditProfile = () => {
     const [website, setWebsite] = useState(profile.website);
     const birthdayData = profile.dateOfBirth.split('/')
     const [dateOfBirth, setDateOfBirth] = useState(birthdayData[2] + "-" + birthdayData[0] + '-' + birthdayData[1]);
-
+    const dispatch = useDispatch();
     const updateProfileHandler = () => {
+        console.log("updateProfile")
         const newProfile = {
-            profileInfo: {
+            profile: {
                 name,
                 bio,
                 location,
@@ -35,7 +35,7 @@ const EditProfile = () => {
                 <i className="bi bi-x h3 text-black ms-2 me-2"></i>
             </Link>
             <span className="text-black fw-bold fs-4 ms-2">Edit Profile</span>
-            <Link to="/tuiter/profile">
+            <Link to="/tuiter/edit-profile">
                 <button className="btn btn-dark rounded-pill float-end pt-2 mb-3"
                         onClick={updateProfileHandler}>Save</button>
             </Link>
@@ -93,7 +93,7 @@ const EditProfile = () => {
             </form>
 
             <div className="mt-4">
-                <a href="/tuiter/edit-profile"><i className="bi bi-chevron-right float-end h4 text-muted"></i></a>
+                <a href="/tuiter/profile"><i className="bi bi-chevron-right float-end h4 text-muted"></i></a>
                 <p>Switch to professional</p>
             </div>
 
