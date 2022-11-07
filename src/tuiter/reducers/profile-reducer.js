@@ -21,7 +21,7 @@ const profileSlice = createSlice({
     initialState: profile,
     reducers: {
         updateProfile(state, action) {
-            const updatedProfile = action.payload;
+            const updatedProfile = action.payload.profile;
             let [firstName, ...lastName] = updatedProfile.name.split('/');
             lastName = lastName.join(' ');
             const bio = updatedProfile.bio;
@@ -30,7 +30,6 @@ const profileSlice = createSlice({
             const [year, month, day] = updatedProfile.dateOfBirth.split('-');
             const dateOfBirth = [month, day, year].join('/');
             return {...state, firstName, lastName, bio, location, website, dateOfBirth}
-            // return {...action.payload};
         }
     }
 });

@@ -1,12 +1,10 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-//import {useNavigate} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {updateProfile} from "../reducers/profile-reducer";
 
 const EditProfile = () => {
     const profile = useSelector(state => state.profile);
-    //const navigate = useNavigate();
 
     const [name, setName] = useState(profile.firstName + ' ' + profile.lastName);
     const [bio, setBio] = useState(profile.bio);
@@ -35,7 +33,7 @@ const EditProfile = () => {
                 <i className="bi bi-x h3 text-black ms-2 me-2"></i>
             </Link>
             <span className="text-black fw-bold fs-4 ms-2">Edit Profile</span>
-            <Link to="/tuiter/edit-profile">
+            <Link to="/tuiter/profile">
                 <button className="btn btn-dark rounded-pill float-end pt-2 mb-3"
                         onClick={updateProfileHandler}>Save</button>
             </Link>
