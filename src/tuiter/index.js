@@ -12,12 +12,22 @@ import whoReducer
 import { configureStore }
     from '@reduxjs/toolkit';
 import {Provider} from "react-redux";
-import tuitsReducer from "./tuits/tuits-reducer";
+import tuitsReducer from "./reducers/tuits-reducer";
 import profileReducer from "./reducers/profile-reducer";
+//import {useState} from "react";
 
 
 const store = configureStore(
-    {reducer: {who: whoReducer, tuits: tuitsReducer, profile: profileReducer}});
+    {
+        reducer:
+            {
+                who: whoReducer,
+                tuits: tuitsReducer,
+                tuitsData: tuitsReducer,
+                profile: profileReducer
+            }
+    });
+
 
 
 function Tuiter() {
@@ -38,10 +48,14 @@ function Tuiter() {
                     <Route path="/edit-profile" element={<EditProfile/>}/>
                 </Routes>
             </div>
+
             <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
                 <WhoToFollowList />
             </div>
+
         </div>
+
+
         </Provider>
     )
 }
