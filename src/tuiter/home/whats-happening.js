@@ -13,7 +13,7 @@ const WhatsHappening = () => {
         const newTuit = {
             userName: profile.firstName + " " + profile.lastName,
             handle: profile.handle,
-            image: profile.profilePicture,
+            image: profile.avatar,
             tuit: whatsHappening
         }
         dispatch(createTuitThunk(newTuit));

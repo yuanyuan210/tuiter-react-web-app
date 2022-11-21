@@ -33,6 +33,9 @@ const PostSummaryItem = (
                         </div>
                     </div>
                     <div className="row">
+                        <div>
+                            {post.tuit}
+                        </div>
                     </div>
                 </div>
                 <div className="col-md-3 col-xl-2">
