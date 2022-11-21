@@ -42,9 +42,9 @@ const TuitStats = ({tuit}) => {
             <div className="col-md-3">
                 <span className="me-1">
                     <i onClick={() => dispatch(updateTuitThunk({...tuit, likes: tuit.likes + 1}))}
-                        className="text-secondary"></i>
+                        className="bi bi-heart  text-secondary" ></i>
                     <span className="text-secondary"> {
-                        tuit.likes && <i className="bi bi-heart-fill" style={{color: tuit.likes ? "red": "white"}}></i>
+                        tuit.likes && <i className=" " style={{color: tuit.likes ? "red": "white"}}></i>
                     }
                         {
                             !tuit.likes
